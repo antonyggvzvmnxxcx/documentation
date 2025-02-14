@@ -1,0 +1,31 @@
+---
+import FunctionsConsumerComponent from "./FunctionsConsumer.mdx"
+import AutomatedFunctionsConsumerComponent from "./AutomatedFunctionsConsumer.mdx"
+import CustomAutomatedFunctionsConsumerComponent from "./CustomAutomatedFunctionsConsumer.mdx"
+import GuidesPrerequisitesComponent from "./GuidesPrerequisites.mdx"
+import GuidesWithAutomationPrerequisitesComponent from "./GuidesWithAutomationPrerequisites.mdx"
+import DenoImportNotesComponent from "./DenoImportNotes.mdx"
+
+export type Props = {
+  section?:
+    | "functions-consumer"
+    | "automated-functions-consumer"
+    | "custom-automated-functions-consumer"
+    | "prerequisites-guides"
+    | "prerequisites-guides-with-automation"
+    | "deno-importe-notes"
+}
+const { section } = Astro.props as Props
+---
+
+{section === "functions-consumer" && <FunctionsConsumerComponent />}
+
+{section === "automated-functions-consumer" && <AutomatedFunctionsConsumerComponent />}
+
+{section === "custom-automated-functions-consumer" && <CustomAutomatedFunctionsConsumerComponent />}
+
+{section === "prerequisites-guides" && <GuidesPrerequisitesComponent />}
+
+{section === "prerequisites-guides-with-automation" && <GuidesWithAutomationPrerequisitesComponent />}
+
+{section === "deno-importe-notes" && <DenoImportNotesComponent />}

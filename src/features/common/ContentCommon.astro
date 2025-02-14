@@ -1,0 +1,10 @@
+---
+import LocalTestingBenefitsComponent from "./local-testing-benefits.mdx"
+
+export type Props = {
+  section?: "localTestingBenefits"
+}
+const { section } = Astro.props as Props
+---
+
+{section === "localTestingBenefits" && <LocalTestingBenefitsComponent />}

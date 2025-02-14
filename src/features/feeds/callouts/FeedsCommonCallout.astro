@@ -1,0 +1,14 @@
+---
+import FeedQualityComponent from "./feed-quality.mdx"
+import PorVerificationComponent from "./por-verification.mdx"
+import PorWalletAddressManagerComponent from "./por-wallet-address-manager.mdx"
+
+export type Props = {
+  callout?: "quality" | "porVerification" | "porWalletAddressManager"
+}
+const { callout } = Astro.props as Props
+---
+
+{callout === "quality" && <FeedQualityComponent />}
+{callout === "porVerification" && <PorVerificationComponent />}
+{callout === "porWalletAddressManager" && <PorWalletAddressManagerComponent />}
