@@ -1,0 +1,16 @@
+---
+import CommonComponent from "./common.mdx"
+import DirectFundingComponent from "./direct-funding.mdx"
+import SubscriptionComponent from "./subscription.mdx"
+import UIComponent from "./ui-callout.mdx"
+
+export type Props = {
+  callout?: "common" | "directFunding" | "subscription" | "ui"
+}
+const { callout } = Astro.props as Props
+---
+
+{callout === "common" && <CommonComponent />}
+{callout === "directFunding" && <DirectFundingComponent />}
+{callout === "subscription" && <SubscriptionComponent />}
+{callout === "ui" && <UIComponent />}

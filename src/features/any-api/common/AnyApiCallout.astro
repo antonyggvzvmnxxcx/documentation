@@ -1,0 +1,14 @@
+---
+import CommonComponent from "./CommonCallout.mdx"
+import PrerequisitesComponent from "./CommonPrerequisites.mdx"
+import UseFunctionsComponent from "./UseFunctions.mdx"
+
+export type Props = {
+  callout?: "common" | "prerequisites" | "usefunctions"
+}
+const { callout } = Astro.props as Props
+---
+
+{callout === "common" && <CommonComponent />}
+{callout === "prerequisites" && <PrerequisitesComponent />}
+{callout === "usefunctions" && <UseFunctionsComponent />}

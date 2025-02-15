@@ -1,0 +1,10 @@
+---
+import BridgeRisksComponent from "./read-bridge-risks.mdx"
+
+export type Props = {
+  callout?: "bridgeRisks"
+}
+const { callout } = Astro.props as Props
+---
+
+{callout === "bridgeRisks" && <BridgeRisksComponent />}
